@@ -1,7 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:delivey_app/app/core/ui/style/text_style.dart';
 import 'package:delivey_app/app/core/ui/widget/delivery_appBar.dart';
 import 'package:delivey_app/app/core/ui/helps/size_extensions.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/ui/widget/delivery_increment_decrement.dart';
 
 class ProductDetailPage extends StatelessWidget {
   const ProductDetailPage({super.key});
@@ -49,10 +52,19 @@ class ProductDetailPage extends StatelessWidget {
           const Divider(),
           Row(
             children: [
-              Text('TESDS'),
+              Container(
+                height: 68,
+                padding: EdgeInsets.all(8),
+                width: context.percentWidth(0.5),
+                child: DeliveryIncrementDecrementButton(
+                  onDecrement: () {},
+                  onIncrement: () {},
+                  amount: 1,
+                ),
+              ),
               Container(
                 width: context.percentWidth(.5),
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 height: 68,
                 child: ElevatedButton(
                   onPressed: () {},
@@ -65,10 +77,14 @@ class ProductDetailPage extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          r'R$ 6,99',
-                          style: context.textStyles.textExtraBold
-                              .copyWith(fontSize: 13),
+                        Expanded(
+                          child: AutoSizeText(
+                            maxFontSize: 13,
+                            minFontSize: 5,
+                            maxLines: 1,
+                            r'R$ 60,99',
+                            style: context.textStyles.textExtraBold,
+                          ),
                         )
                       ]),
                 ),
