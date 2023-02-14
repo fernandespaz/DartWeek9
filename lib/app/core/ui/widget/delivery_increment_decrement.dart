@@ -46,7 +46,7 @@ class DeliveryIncrementDecrementButton extends StatelessWidget {
             ),
           ),
           Text(
-            '$amount',
+            amount.toString(),
             style: context.textStyles.textRegular.copyWith(
               fontSize: _compact ? 13 : 17,
               color: context.appColors.secondary,

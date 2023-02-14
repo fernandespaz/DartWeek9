@@ -54,12 +54,12 @@ class ProductDetailPage extends StatelessWidget {
             children: [
               Container(
                 height: 68,
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 width: context.percentWidth(0.5),
                 child: DeliveryIncrementDecrementButton(
                   onDecrement: () {},
                   onIncrement: () {},
-                  amount: 1,
+                  amount: 2,
                 ),
               ),
               Container(
@@ -79,6 +79,7 @@ class ProductDetailPage extends StatelessWidget {
                         ),
                         Expanded(
                           child: AutoSizeText(
+                            textAlign: TextAlign.end,
                             maxFontSize: 13,
                             minFontSize: 5,
                             maxLines: 1,
